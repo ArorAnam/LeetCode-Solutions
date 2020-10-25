@@ -70,3 +70,25 @@ public:
         return dp[s.length()];
     }
 };
+
+
+// Soltion 3 - O(n)
+bool is_valid(char c1, char c2){
+     return c1 != '0' && (c1-'0')*10+(c2-'0') <= 26;
+ }
+
+ int numDecodings(string s) {
+     int last = 1;
+     int second_last = 0;
+
+     for(int i=1; i<=s.size(); i++){
+         int curr = 0;
+         if(s[i-1] != '0')
+             curr+=last;
+         if(i>1 && is_valid(s[i-2], s[i-1]))
+             curr+=second_last;
+         second_last = last;
+         last = curr;
+     }
+     return last;
+ }
