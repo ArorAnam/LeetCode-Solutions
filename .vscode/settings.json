@@ -12,6 +12,7 @@
         "regex": "cpp",
         "utility": "cpp",
         "valarray": "cpp",
-        "map": "cpp"
+        "map": "cpp",
+        "random": "cpp"
     }
 }
